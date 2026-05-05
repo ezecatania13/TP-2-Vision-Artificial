@@ -33,10 +33,10 @@ clasificador.fit(X, Y)
 dump(clasificador, MODEL_FILENAME)
 print(f"Modelo entrenado y guardado en {MODEL_FILENAME}")
 
-# (Opcional) Visualizar el árbol de decisión
+# Visualizar el árbol de decisión
 import matplotlib.pyplot as plt
 plt.figure(figsize=(12,8))
 tree.plot_tree(clasificador, filled=True, feature_names=header[:7], class_names=[str(i) for i in set(Y)])
 plt.savefig("arbol_decision.png")
-plt.show()
 print("Imagen del árbol de decisión guardada como arbol_decision.png")
+#plt.show()
