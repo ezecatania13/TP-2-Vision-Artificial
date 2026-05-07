@@ -43,19 +43,17 @@ while True:
     key = cv2.waitKey(1) & 0xFF
     if key == 27:  # ESC para salir
         break
-    elif key == 32 and contours:  # ESPACIO para mostrar invariantes de Hu sin guardar
-        moments = cv2.moments(c)
-        hu = cv2.HuMoments(moments).flatten()
-        print("Invariantes de Hu (NO guardados):", hu)
-    elif key == 13 and contours:  # ENTER para guardar invariantes de Hu
+    elif key == 32 and contours:  # ESPACIO para mostrar y preguntar si guardar
         moments = cv2.moments(c)
         hu = cv2.HuMoments(moments).flatten()
         print("Invariantes de Hu:", hu)
-        etiqueta = input("Ingresa la etiqueta numérica para este contorno: ")
-        with open(CSV_FILENAME, mode='a', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(list(hu) + [etiqueta])
-        print(f"Guardado en {CSV_FILENAME}")
+        respuesta = input("¿Deseas guardar estos invariantes? (s/n): ").strip().lower()
+        if respuesta == 's':
+            etiqueta = input("Ingresa la etiqueta numérica para este contorno: ")
+            with open(CSV_FILENAME, mode='a', newline='') as f:
+                writer = csv.writer(f)
+                writer.writerow(list(hu) + [etiqueta])
+            print(f"Guardado en {CSV_FILENAME}")
 
 cap.release()
 cv2.destroyAllWindows()

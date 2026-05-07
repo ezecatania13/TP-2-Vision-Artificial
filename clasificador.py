@@ -22,9 +22,10 @@ while True:
     if not ret:
         break # Si no se pudo capturar, termina el bucle
 
-    # Convierte la imagen a escala de grises, aplica umbral para binarizar y encuentra contornos
+    # Convierte la imagen a escala de grises, aplica umbral adaptativo Otsu para binarizar y encuentra contornos
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    _, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY_INV)
+    # Otsu encuentra el mejor umbral automáticamente
+    _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
     contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     # Procesa cada contorno encontrado

@@ -1,5 +1,0 @@
-TODO para mejorar el proyecto:
- 
-1. Separar el dataset en conjunto de entrenamiento y conjunto de prueba, para evaluar el desempeño del modelo con datos no vistos.
-2. Capturar más descriptores de cada figura para mejorar la robustez del modelo.
-3. Agregar una nueva característica (feature) al dataset, además de los 7 invariantes de Hu (por ejemplo: relación área/perímetro, solidez, o relación de aspecto).
