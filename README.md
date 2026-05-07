@@ -33,8 +33,9 @@ pip install opencv-python numpy scikit-learn joblib matplotlib
      python generador_descriptores.py
      ```
    - Coloca una figura sobre un fondo liso y:
-     - Presiona **ESPACIO** para mostrar los invariantes de Hu del contorno más grande sin guardarlos (útil si te equivocaste o no quieres guardar esa muestra).
-     - Presiona **ENTER** para guardar los invariantes de Hu y la etiqueta en el archivo CSV. Ingresa la etiqueta numérica correspondiente (ejemplo: 1 para rectángulo, 2 para triángulo, etc.).
+     - Presiona **ESPACIO** para mostrar los invariantes de Hu del contorno más grande sin guardarlos.
+     - Ingresa 's' para guardar los invariantes de Hu y la etiqueta en el archivo CSV. Luego, ingresa la etiqueta numérica correspondiente (1 para triángulo, 2 para rectángulo, 3 para circulo).
+     - Ingresa 'n' si te equivocaste o no quieres guardar esa muestra.
      - Presiona **ESC** para salir.
    - Repite para varias muestras y figuras.
 

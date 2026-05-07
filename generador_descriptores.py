@@ -11,8 +11,7 @@ CSV_FILENAME = "invariantes_hu.csv"
 cap = cv2.VideoCapture(0)
 
 
-print("Presiona ENTER para guardar los invariantes de Hu del contorno más grande.")
-print("Presiona ESPACIO para mostrar los invariantes sin guardar.")
+print("Presiona ESPACIO para mostrar los invariantes de Hu.")
 print("Presiona ESC para salir.")
 
 # Si el archivo no existe, crea el encabezado
